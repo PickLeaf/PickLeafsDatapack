@@ -13,5 +13,6 @@
   "pklfdp.enchantment.item_hook": "掉落物钩",
   "pklfdp.enchantment.machine_eject": "机器：喷射",
   "pklfdp.enchantment.machine_random_tick": "机器：随机刻",
-  "pklfdp.enchantment.machine_feature": "机器：地物"
+  "pklfdp.enchantment.machine_feature": "机器：地物",
+  "pklfdp.enchantment.machine_filch": "机器：窃取"
 }

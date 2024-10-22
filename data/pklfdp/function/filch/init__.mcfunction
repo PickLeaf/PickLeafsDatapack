@@ -1,0 +1,1 @@
+data modify storage pklfdp:var temp set from entity @s UUID

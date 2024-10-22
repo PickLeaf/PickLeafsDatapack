@@ -21,11 +21,14 @@
                 "type": "minecraft:armor_stand",
                 "flags": {
                   "is_on_ground": true
-                },
-                "stepping_on": {
-                  "block": {
-                    "blocks": "minecraft:comparator"
-                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:comparator"
                 }
               }
             },

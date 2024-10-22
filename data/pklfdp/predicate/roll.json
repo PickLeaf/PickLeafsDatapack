@@ -1,0 +1,8 @@
+{
+    "condition": "minecraft:random_chance",
+    "chance": {
+        "type": "minecraft:storage",
+        "storage": "pklfdp:var",
+        "path": "temp.chance"
+    }
+}

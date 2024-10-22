@@ -1,15 +1,90 @@
 {
   "anvil_cost": 4,
   "description": {
-    "translate": "pklfdp.enchantment.machine_random_tick",
-    "fallback": "机器：随机刻"
+    "translate": "pklfdp.enchantment.machine_filch",
+    "fallback": "机器：窃取"
   },
   "effects": {
+    "minecraft:location_changed": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "pklfdp:filch/init"
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:armor_stand",
+                "flags": {
+                  "is_on_ground": true
+                }
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "offsetY": -1,
+              "predicate": {
+                "block": {
+                    "blocks": "minecraft:decorated_pot"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "offsetY": -1,
+                "predicate": {
+                  "block": {
+                    "nbt": "{components:{\"minecraft:custom_data\":{\"pklfdp:HasMachine\":1b}}}"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
     "minecraft:tick": [
       {
         "effect": {
           "type": "minecraft:run_function",
-          "function": "pklfdp:random_tick/finalize"
+          "function": "pklfdp:filch/finalize"
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "nbt": "{Tags:[\"pklfdp.IsMachine\"]}",
+                "periodic_tick": 20
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "offsetY": -1,
+                "predicate": {
+                  "block": {
+                    "blocks": "minecraft:decorated_pot"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "pklfdp:filch/run"
         },
         "requirements": {
           "condition": "all_of",
@@ -28,100 +103,9 @@
                 "condition": "minecraft:location_check",
                 "predicate": {
                   "block": {
-                    "blocks": "minecraft:crafter"
+                    "nbt": "{item:{}}"
                   }
                 }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "effect": {
-          "type": "minecraft:run_function",
-          "function": "pklfdp:random_tick/init"
-        },
-        "requirements": {
-          "condition": "all_of",
-          "terms": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "type": "minecraft:armor_stand",
-                "periodic_tick": 20,
-                "flags": {
-                  "is_on_ground": true
-                }
-              }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "offsetY": -1,
-              "predicate": {
-                "block": {
-                  "blocks": "minecraft:crafter"
-                }
-              }
-            },
-            {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:location_check",
-                "offsetY": -1,
-                "predicate": {
-                  "block": {
-                    "nbt": "{components:{\"minecraft:custom_data\":{\"pklfdp:HasMachine\":1b}}}"
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "effect": {
-          "type": "minecraft:run_function",
-          "function": "pklfdp:random_tick/run"
-        },
-        "requirements": {
-          "condition": "all_of",
-          "terms": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "nbt": "{Tags:[\"pklfdp.IsMachine\"]}",
-                "periodic_tick": 50
-              }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "block": {
-                  "state": {
-                    "triggered": "false"
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "effect": {
-          "type": "minecraft:run_function",
-          "function": "pklfdp:random_tick/prd"
-        },
-        "requirements": {
-          "condition": "all_of",
-          "terms": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "nbt": "{Tags:[\"pklfdp.IsMachine\"],HurtTime:0s}",
-                "periodic_tick": 200
               }
             }
           ]
@@ -139,9 +123,9 @@
   },
   "max_level": 1,
   "slots": [
-    "mainhand"
+    "legs"
   ],
-  "supported_items": "#pklfdp:can_random_tick",
+  "supported_items": "minecraft:diamond_leggings",
   "primary_items": [],
   "weight": 1
 }

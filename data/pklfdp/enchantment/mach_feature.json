@@ -119,11 +119,15 @@
                 "type": "minecraft:piglin",
                 "flags": {
                   "is_on_ground": true
-                },
-                "stepping_on": {
-                  "block": {
-                    "blocks": "minecraft:crafter"
-                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "offsetY": -1,
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:crafter"
                 }
               }
             }

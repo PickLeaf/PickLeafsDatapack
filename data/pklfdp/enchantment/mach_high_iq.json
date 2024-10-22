@@ -37,11 +37,15 @@
               "predicate": {
                 "type": "minecraft:villager",
                 "periodic_tick": 20,
-                "nbt": "{Offers:{}}",
-                "stepping_on": {
-                  "block": {
-                    "blocks": "minecraft:decorated_pot"
-                  }
+                "nbt": "{Offers:{}}"
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "offsetY": -1,
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:decorated_pot"
                 }
               }
             },
@@ -52,7 +56,6 @@
                 "offsetY": -1,
                 "predicate": {
                   "block": {
-                    "blocks": "minecraft:decorated_pot",
                     "nbt": "{item:{}}"
                   }
                 }

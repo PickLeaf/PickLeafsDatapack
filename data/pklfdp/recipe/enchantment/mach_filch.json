@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "minecraft:shulker_shell"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+	"result": {
+		"id": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+        "pklfdp:mach_filch": 1
+      }
+		}
+	}
+}

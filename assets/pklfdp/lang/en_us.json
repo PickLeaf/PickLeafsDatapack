@@ -13,5 +13,6 @@
   "pklfdp.enchantment.item_hook": "Item Hook",
   "pklfdp.enchantment.machine_eject": "Machine: Eject",
   "pklfdp.enchantment.machine_random_tick": "Machine: Random Tick",
-  "pklfdp.enchantment.machine_feature": "Machine: Feature"
+  "pklfdp.enchantment.machine_feature": "Machine: Feature",
+  "pklfdp.enchantment.machine_filch": "Machine: Filch"
 }
