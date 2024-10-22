@@ -95,7 +95,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "nbt": "{ArmorItems:[{components:{\"minecraft:custom_data\":{\"pklfdp:r\":{}}}}]}"
+                  "nbt": "{Tags:[\"pklfdp.HasRecipe\"]}"
                 }
               }
             }

@@ -1,3 +1,3 @@
-$return run data modify entity @s \
-  ArmorItems[3].components."minecraft:custom_data".r \
+$return run data modify block ~ ~ ~ \
+  components."minecraft:custom_data" \
   set from storage pklfdp:r feature."$(id)"
