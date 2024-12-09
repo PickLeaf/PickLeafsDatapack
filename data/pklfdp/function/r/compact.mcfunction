@@ -1,3 +1,4 @@
+#natural
 data modify storage pklfdp:r compact.\
   "minecraft:netherite_scrap+minecraft:sculk" \
   set value {id:"minecraft:ancient_debris",count:1b}
@@ -87,3 +88,16 @@ data modify storage pklfdp:r compact.\
 data modify storage pklfdp:r compact.\
   "minecraft:emerald+minecraft:deepslate" \
   set value {id:"minecraft:deepslate_emerald_ore",count:1b}
+
+#something automatic
+data modify storage pklfdp:r compact.\
+  "minecraft:magma_cream+minecraft:pointed_dripstone" \
+  set value {id:"minecraft:magma_block",count:1b}
+
+data modify storage pklfdp:r compact.\
+  "minecraft:bucket+minecraft:magma_block" \
+  set value {id:"minecraft:lava_bucket",count:1b}
+
+data modify storage pklfdp:r compact.\
+  "minecraft:glass_bottle+minecraft:purpur_block" \
+  set value {id:"minecraft:dragon_breath",count:1b}
