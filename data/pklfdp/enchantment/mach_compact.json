@@ -1,41 +1,48 @@
 {
   "anvil_cost": 4,
   "description": {
-    "translate": "pklfdp.enchantment.machine_feature",
-    "fallback": "机器：地物"
+    "translate": "pklfdp.enchantment.mach_compact",
+    "fallback": "机器：紧实"
   },
   "effects": {
-    "minecraft:post_attack": [
+    "minecraft:location_changed": [
       {
-        "affected": "victim",
-        "enchanted": "victim",
         "effect": {
           "type": "minecraft:run_function",
-          "function": "pklfdp:feature/run"
+          "function": "pklfdp:compact/init"
         },
         "requirements": {
-          "condition": "minecraft:all_of",
+          "condition": "all_of",
           "terms": [
             {
-              "condition": "minecraft:damage_source_properties",
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
               "predicate": {
-                "direct_entity": {
-                  "type": "minecraft:wind_charge"
+                "type": "minecraft:armor_stand",
+                "flags": {
+                  "is_on_ground": true
                 }
               }
             },
             {
               "condition": "minecraft:location_check",
-              "offsetY": 1,
+              "offsetY": -1,
               "predicate": {
-                "can_see_sky": true
+                "block": {
+                  "blocks": "minecraft:blast_furnace"
+                }
               }
             },
             {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "nbt": "{Tags:[\"pklfdp.IsMachine\"]}"
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "offsetY": -1,
+                "predicate": {
+                  "block": {
+                    "nbt": "{components:{\"minecraft:custom_data\":{\"pklfdp:HasMachine\":1b}}}"
+                  }
+                }
               }
             }
           ]
@@ -46,7 +53,7 @@
       {
         "effect": {
           "type": "minecraft:run_function",
-          "function": "pklfdp:feature/finalize"
+          "function": "pklfdp:compact/finalize"
         },
         "requirements": {
           "condition": "all_of",
@@ -65,7 +72,7 @@
                 "condition": "minecraft:location_check",
                 "predicate": {
                   "block": {
-                    "blocks": "minecraft:crafter"
+                    "blocks": "minecraft:blast_furnace"
                   }
                 }
               }
@@ -76,7 +83,7 @@
       {
         "effect": {
           "type": "minecraft:run_function",
-          "function": "pklfdp:feature/load"
+          "function": "pklfdp:compact/run"
         },
         "requirements": {
           "condition": "all_of",
@@ -86,48 +93,17 @@
               "entity": "this",
               "predicate": {
                 "nbt": "{Tags:[\"pklfdp.IsMachine\"]}",
-                "periodic_tick": 20
+                "periodic_tick": 8
               }
             },
             {
               "condition": "minecraft:inverted",
               "term": {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
+                "condition": "minecraft:location_check",
                 "predicate": {
-                  "nbt": "{Tags:[\"pklfdp.HasRecipe\"]}"
-                }
-              }
-            }
-          ]
-        }
-      }
-    ],
-    "minecraft:location_changed": [
-      {
-        "effect": {
-          "type": "minecraft:run_function",
-          "function": "pklfdp:feature/init"
-        },
-        "requirements": {
-          "condition": "all_of",
-          "terms": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "type": "minecraft:piglin",
-                "flags": {
-                  "is_on_ground": true
-                }
-              }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "offsetY": -1,
-              "predicate": {
-                "block": {
-                  "blocks": "minecraft:crafter"
+                  "block": {
+                    "nbt": "{item:{}}"
+                  }
                 }
               }
             }
