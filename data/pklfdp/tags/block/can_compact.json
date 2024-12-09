@@ -1,0 +1,12 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:sand",
+    "minecraft:gravel",
+    "minecraft:stone",
+    "minecraft:deepslate",
+    "minecraft:blackstone",
+    "minecraft:netherrack",
+    "minecraft:sculk"
+  ]
+}

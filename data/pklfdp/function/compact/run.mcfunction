@@ -1,14 +1,10 @@
-loot insert ~ ~-1 ~ mine ~ ~ ~ \
-  minecraft:diamond_pickaxe[ \
-  minecraft:enchantments={"minecraft:silk_touch":1}]
+execute unless items block ~ ~ ~ container.0 #pklfdp:can_compact \
+  run return fail
 
-execute if function pklfdp:crushing/chk_r \
-  run function pklfdp:crushing/udt_r
+execute unless block ^ ^ ^1 #pklfdp:can_compact \
+  run return fail
 
-data modify block ~ ~-1 ~ item \
-  set from entity @s \
-  ArmorItems[3].components."minecraft:custom_data".r
+execute if function pklfdp:compact/chk_r \
+  run return run function pklfdp:compact/udt_r
 
-setblock ~ ~ ~ minecraft:air
-playsound minecraft:block.anvil.step block @a
-particle minecraft:crit ~ ~1 ~ 0.2 0.2 0.2 0.1 10 normal
+function pklfdp:compact/run_

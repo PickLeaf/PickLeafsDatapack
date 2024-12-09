@@ -1,3 +1,7 @@
-setblock ~ ~ ~ minecraft:air
-playsound minecraft:block.anvil.step block @a
-particle minecraft:crit ~ ~1 ~ 0.2 0.2 0.2 0.1 10 normal
+data modify block ~ ~ ~ Items \
+  append from entity @s \
+  ArmorItems[3].components."minecraft:custom_data".r
+
+item modify block ~ ~ ~ container.0 pklfdp:minus_one
+setblock ^ ^ ^1 minecraft:air
+playsound minecraft:entity.enderman.teleport block @a

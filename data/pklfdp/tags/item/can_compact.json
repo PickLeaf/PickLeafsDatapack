@@ -1,0 +1,16 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:netherite_scrap",
+    "minecraft:raw_gold",
+    "minecraft:bone_meal",
+    "minecraft:emerald",
+    "minecraft:blue_ice",
+    "minecraft:twisting_vines",
+    "minecraft:weeping_vines",
+    "minecraft:honeycomb",
+    "minecraft:brick",
+    "minecraft:snow_block",
+    "minecraft:charcoal"
+  ]
+}

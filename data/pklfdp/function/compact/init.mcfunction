@@ -4,6 +4,7 @@ execute if data entity @s ArmorItems[3].id \
 data modify entity @s Small set value 1b
 data modify entity @s Marker set value 1b
 data modify entity @s Invisible set value 1b
+data modify entity @s Pose.Head set value [90f,0f,0f]
 tag @s add pklfdp.IsMachine
 
 data modify block ~ ~-0.5 ~ \
@@ -13,5 +14,5 @@ data modify block ~ ~-0.5 ~ \
 data modify entity @s ArmorItems[3] \
   set value {id:"minecraft:anvil",count:1b}
 
-execute align xyz positioned ~0.5 ~0.25 ~0.5 \
+execute align xyz positioned ~0.5 ~-0.5 ~0.5 \
   run teleport @s ~ ~ ~
