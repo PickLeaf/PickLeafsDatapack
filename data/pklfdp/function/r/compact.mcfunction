@@ -8,7 +8,7 @@ data modify storage pklfdp:r compact.\
   set value {id:"minecraft:nether_gold_ore",count:1b}
 
 data modify storage pklfdp:r compact.\
-  "minecraft:bone_meal+minecraft:netherrack" \
+  "minecraft:quartz+minecraft:netherrack" \
   set value {id:"minecraft:nether_quartz_ore",count:1b}
 
 data modify storage pklfdp:r compact.\
@@ -29,7 +29,7 @@ data modify storage pklfdp:r compact.\
   set value {id:"minecraft:coal_ore",count:1b}
 
 data modify storage pklfdp:r compact.\
-  "minecraft:snow_block+minecraft:stone" \
+  "minecraft:bone_meal+minecraft:stone" \
   set value {id:"minecraft:iron_ore",count:1b}
 
 data modify storage pklfdp:r compact.\
@@ -62,7 +62,7 @@ data modify storage pklfdp:r compact.\
   set value {id:"minecraft:deepslate_coal_ore",count:1b}
 
 data modify storage pklfdp:r compact.\
-  "minecraft:snow_block+minecraft:deepslate" \
+  "minecraft:bone_meal+minecraft:deepslate" \
   set value {id:"minecraft:deepslate_iron_ore",count:1b}
 
 data modify storage pklfdp:r compact.\

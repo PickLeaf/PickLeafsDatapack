@@ -16,7 +16,7 @@ data modify storage pklfdp:r myopia."minecraft:mud" \
   set value {id:"minecraft:clay"}
 data modify storage pklfdp:r myopia."minecraft:snow_block" \
   set value {id:"minecraft:powder_snow"}
-
+item modify block ~ ~-1 ~ container.0 {function:"minecraft:set_damage",add:true,damage:-1}
 data modify storage pklfdp:r myopia."minecraft:honey_block" \
   set value {id:"minecraft:sponge"}
 data modify storage pklfdp:r myopia."minecraft:amethyst_block" \

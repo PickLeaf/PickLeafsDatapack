@@ -1,7 +1,12 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:air",
+    "minecraft:kelp",
+    "minecraft:seagrass",
+    "minecraft:tall_seagrass",
+    "minecraft:sea_pickle",
+    "#minecraft:corals",
+    "minecraft:bubble_column",
     "minecraft:water",
     "minecraft:lava"
   ]

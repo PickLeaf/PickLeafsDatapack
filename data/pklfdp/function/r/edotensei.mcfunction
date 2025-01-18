@@ -115,7 +115,7 @@ data modify storage pklfdp:r edotensei.lava."minecraft:lightning_rod" \
   set value {id:"minecraft:lightning_bolt",time:200}
 data modify storage pklfdp:r edotensei.lava."minecraft:golden_axe" \
   set value {id:"minecraft:piglin_brute",time:40,nbt:{IsImmuneToZombification:1b}}
-data modify storage pklfdp:r edotensei.lava."minecraft:orange_dye" \
+data modify storage pklfdp:r edotensei.lava."minecraft:gold_nugget" \
   set value {id:"minecraft:zombified_piglin",time:40,nbt:{CanPickUpLoot:1b}}
 data modify storage pklfdp:r edotensei.lava."minecraft:red_sand" \
   set value {id:"minecraft:magma_cube",time:40,nbt:{Size:1}}
